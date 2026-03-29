@@ -33,7 +33,16 @@
         }
 
         .preview-img{
-            height: 50px;
+            height: 100px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .gallery-preview{
+            display: flex;
+            overflow-x: scroll;
+            width: 30%;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -46,22 +55,54 @@
 
         <span class="btn-slide btn-right" onclick="slideRight()">&gt;</span>
     </div>
+    <h3 id="title"></h3>
+
     <div class="gallery-preview" id="gallery-preview"> </div>
     <script>
-        const IMAGES = ["./images/Embellished Round Watch - Rose Gold.webp",
-            "./images/Fastrack Vyb Halo Quartz Analog Grey Dial Metal Strap Watch.webp",
-            "./images/shoppingStyledose Women's Analogue Wrist Watch.webp",
-            "./images/Elegant_Butterfly_Charm_Gold_Plated_adjustable_Ladies_Bracelet_Watch_4VOI5Z5OBT_2026-03-11_1.webp",
-            "./images/classic trendy stylish watch.jpg",
-            "./images/5-2PCS-Set-Watch-for-Women-Luxury-Leather-Analog-Ladies-Quartz-Wrist-Watch-Fashion-Bracelet-Watch-5.jpg_640x640-5.jpg"
-        ];
+        
+
+        const IMAGES = [
+            {
+                 url : "./images/Embellished Round Watch - Rose Gold.webp",
+                 title : "Embellished Round Watch - Rose Gold",
+            },
+
+            {
+                url :"./images/Fastrack Vyb Halo Quartz Analog Grey Dial Metal Strap Watch.webp",
+                title: "Fastrack Vyb Halo Quartz Analog Grey Dial Metal Strap Watch",
+            },
+
+            {
+                url : "./images/shoppingStyledose Women's Analogue Wrist Watch.webp",
+                title: "shoppingStyledose Women's Analogue Wrist Watch",
+            },
+
+            {
+                url :"./images/Elegant_Butterfly_Charm_Gold_Plated_adjustable_Ladies_Bracelet_Watch_4VOI5Z5OBT_2026-03-11_1.webp",
+                title : "Elegant Butterfly Charm Gold Plated adjustable Ladies Bracelet Watch",
+            },
+
+            {
+                url : "./images/classic trendy stylish watch.jpg",
+                title : "classic trendy stylish watch",
+
+            },
+
+            {
+                url : "./images/5-2PCS-Set-Watch-for-Women-Luxury-Leather-Analog-Ladies-Quartz-Wrist-Watch-Fashion-Bracelet-Watch-5.jpg_640x640-5.jpg",
+                title : "Luxury Leather Analog Ladies Quartz Wrist Watch Fashion Bracelet Watch",
+            },
+
+        ]
 
         let currentIndex = 1;
 
         function showCurrentIndexImage() {
             const imgElement = document.getElementById("mainImage");
+            const headerElement = document.getElementById("title");
 
-            imgElement.src = IMAGES[currentIndex];
+            imgElement.src = IMAGES[currentIndex].url;
+            headerElement.innerHTML = IMAGES[currentIndex].title;
         }
 
         function slideLeft() {
@@ -83,13 +124,18 @@
             showCurrentIndexImage();
         }
 
+        function showImage(index) {
+            currentIndex = index;
+            showCurrentIndexImage();
+        }
+
         function createGalleryPreview() {
             const galleryPreviewContainer = document.getElementById("gallery-preview");
             galleryPreviewContainer.innerHTML = "";
             
             for (let i = 0; i < IMAGES.length; i++) {
                 
-                galleryPreviewContainer.innerHTML += `<img src='${IMAGES[i]}' class='preview-img' />`;
+                galleryPreviewContainer.innerHTML += `<img src='${IMAGES[i].url}' class='preview-img' onclick = 'showImage(${i})' />`;
             }
         }
 
