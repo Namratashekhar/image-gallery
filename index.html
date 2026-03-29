@@ -15,15 +15,21 @@
         .gallery-container{
             width: fit-content;
             margin: 10px auto;
+             display: flex;
+            align-items: center;
+        }
+
+        .btn-slide{
+           
         }
     </style>
 </head>
 
 <body>
     <div class="gallery-container">
-        <span> &lt; </span>
+        <span class="btn-slide btn-left"> &lt; </span>
         <img src="./images/Embellished Round Watch - Rose Gold.webp" alt="Image 1" class="main-image" />
-        <span>&gt;</span>
+        <span class="btn-slide btn-right">&gt;</span>
     </div>
     <script>
         const IMAGES = ["./images/Embellished Round Watch - Rose Gold.webp",
