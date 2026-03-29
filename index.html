@@ -46,6 +46,9 @@
         const IMAGES = ["./images/Embellished Round Watch - Rose Gold.webp",
             "./images/Fastrack Vyb Halo Quartz Analog Grey Dial Metal Strap Watch.webp",
             "./images/shoppingStyledose Women's Analogue Wrist Watch.webp",
+            "./images/Elegant_Butterfly_Charm_Gold_Plated_adjustable_Ladies_Bracelet_Watch_4VOI5Z5OBT_2026-03-11_1.webp",
+            "./images/classic trendy stylish watch.jpg",
+            "./images/5-2PCS-Set-Watch-for-Women-Luxury-Leather-Analog-Ladies-Quartz-Wrist-Watch-Fashion-Bracelet-Watch-5.jpg_640x640-5.jpg"
         ];
 
         let currentIndex = 1;
@@ -57,7 +60,11 @@
         }
 
         function slideLeft() {
+            if(currentIndex > 0) {
             currentIndex--;
+            }else{
+                currentIndex = IMAGES.length -1;
+            }
             showCurrentIndexImage();
         }
 
