@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
 
     <style>
-        .image{
+        .main-image {
             height: 200px;
             width: 150px;
         }
     </style>
 </head>
-<body>
-    <span> &lt; </span>
-    <div>
-        <img src="./images/Embellished Round Watch - Rose Gold.webp" alt="Image 1" class="image">
-        <img src="./images/Fastrack Vyb Halo Quartz Analog Grey Dial Metal Strap Watch.webp" alt="Image 2"class="image" >       
-    </div>
-    <span>&gt;</span>
 
+<body>
+    <div><span> &lt; </span>
+        <img src="./images/Embellished Round Watch - Rose Gold.webp" alt="Image 1" class="main-image" />
+        <span>&gt;</span>
+    </div>
     <script>
-        const IMAGES = [];
+        const IMAGES = ["./images/Embellished Round Watch - Rose Gold.webp",
+            "./images/Fastrack Vyb Halo Quartz Analog Grey Dial Metal Strap Watch.webp"
+
+        ];
     </script>
-    
+
 </body>
+
 </html>
