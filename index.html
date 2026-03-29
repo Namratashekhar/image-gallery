@@ -62,7 +62,12 @@
         }
 
         function slideRight() {
-            currentIndex++;
+            if(currentIndex < IMAGES.length - 1){
+                currentIndex++;
+            }else{
+                currentIndex= 0;
+            }
+
             showCurrentIndexImage();
         }
 
