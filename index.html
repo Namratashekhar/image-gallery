@@ -31,6 +31,10 @@
             cursor: pointer;  
             border: 1px solid black;
         }
+
+        .preview-img{
+            height: 50px;
+        }
     </style>
 </head>
 
@@ -42,6 +46,7 @@
 
         <span class="btn-slide btn-right" onclick="slideRight()">&gt;</span>
     </div>
+    <div class="gallery-preview" id="gallery-preview"> </div>
     <script>
         const IMAGES = ["./images/Embellished Round Watch - Rose Gold.webp",
             "./images/Fastrack Vyb Halo Quartz Analog Grey Dial Metal Strap Watch.webp",
@@ -77,6 +82,18 @@
 
             showCurrentIndexImage();
         }
+
+        function createGalleryPreview() {
+            const galleryPreviewContainer = document.getElementById("gallery-preview");
+            galleryPreviewContainer.innerHTML = "";
+            
+            for (let i = 0; i < IMAGES.length; i++) {
+                
+                galleryPreviewContainer.innerHTML += `<img src='${IMAGES[i]}' class='preview-img' />`;
+            }
+        }
+
+        createGalleryPreview();
 
 
     </script>
