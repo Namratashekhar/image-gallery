@@ -36,15 +36,37 @@
 
 <body>
     <div class="gallery-container">
-        <span class="btn-slide btn-left"> &lt; </span>
-        <img src="./images/Embellished Round Watch - Rose Gold.webp" alt="Image 1" class="main-image" />
-        <span class="btn-slide btn-right">&gt;</span>
+        <span class="btn-slide btn-left" onclick="slideLeft()"> &lt; </span>
+
+        <img src="./images/Embellished Round Watch - Rose Gold.webp" alt="Image 1" class="main-image" id="mainImage" />
+
+        <span class="btn-slide btn-right" onclick="slideRight()">&gt;</span>
     </div>
     <script>
         const IMAGES = ["./images/Embellished Round Watch - Rose Gold.webp",
-            "./images/Fastrack Vyb Halo Quartz Analog Grey Dial Metal Strap Watch.webp"
-
+            "./images/Fastrack Vyb Halo Quartz Analog Grey Dial Metal Strap Watch.webp",
+            "./images/shoppingStyledose Women's Analogue Wrist Watch.webp",
         ];
+
+        let currentIndex = 1;
+
+        function showCurrentIndexImage() {
+            const imgElement = document.getElementById("mainImage");
+
+            imgElement.src = IMAGES[currentIndex];
+        }
+
+        function slideLeft() {
+            currentIndex--;
+            showCurrentIndexImage();
+        }
+
+        function slideRight() {
+            currentIndex++;
+            showCurrentIndexImage();
+        }
+
+
     </script>
 
 </body>
